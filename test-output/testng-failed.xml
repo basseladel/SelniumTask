@@ -10,9 +10,9 @@
     <classes>
       <class name="tests.UserLoginTest">
         <methods>
-          <include name="startDriver"/>
-          <include name="stopDriver"/>
-          <include name="validLogin"/>
+          <include name="verifyLoginCredentials" invocation-numbers="0 1"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- tests.UserLoginTest -->
     </classes>

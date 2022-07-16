@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,20 +23,18 @@ public class UserLoginPage extends PageBase {
 	@FindBy(id="login-submit-btn")
 	WebElement loginBtn;
 	@FindBy(xpath="//div/h3[@class='a-h3 u-margin-xx-small--bottom']")
-	public WebElement successMsg;
+	public WebElement usernameSuccessTxt;
+	@FindBy(xpath="//div/h3[@class='a-h3 u-margin-xx-small--bottom']")
+	public WebElement validationMsg;
+
 	 
-	public void userLogin(String email, String password) throws InterruptedException {
+	public void userLogin(String email, String password) {
 		setTextElementText(emailTxtBox, email);
-		Thread.sleep(3000);
 		setTextElementText(passwordTxtBox, password);
-		Thread.sleep(20000);
 //		clickButton(confBtn);
-//		Thread.sleep(3000);
-//		WebDriverWait wait = new WebDriverWait(driver,30);
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(120));
 //     	wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-submit-btn")));
 //        clickButton(loginBtn);
-		
-		
 	}
 
 }
